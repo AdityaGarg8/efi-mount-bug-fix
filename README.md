@@ -16,4 +16,4 @@ Now to solve this problem, we need to prevent Linux to scan the line instructing
 So, to prevent Linux to scan the line instructing it to mount the Windows EFI partition, we need to comment that line (put a `#` in front of the line). After commenting, it looks something like this :-
 ![After](https://github.com/AdityaGarg8/efi-mount-bug-fix/raw/main/After.png)
 
-Now save the file and restart your Mac. The bug should be fixed. In order to conform, check that `/dev/nvme0n1p1` is not mounted as `/boot/efi` by running `lsblk` or using a disk utility program.
+Now save the file and restart your Mac. The bug should be fixed. In order to confirm, check that `/dev/nvme0n1p1` is not mounted as `/boot/efi` by running `lsblk` or using a disk utility program.
