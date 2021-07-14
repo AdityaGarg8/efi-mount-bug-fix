@@ -9,3 +9,4 @@ This bug causes Linux to overwrite the Windows Bootloader in the Windows EFI par
 ## Fixing the bug
 
 In order to fix the bug, you need to modify the `/etc/fstab` file. A sample of the file is shown here :-
+![Before](https://github.com/AdityaGarg8/efi-mount-bug-fix/raw/main/Before.png)
