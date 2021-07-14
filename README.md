@@ -8,5 +8,9 @@ This bug causes Linux to overwrite the Windows Bootloader in the Windows EFI par
 
 ## Fixing the bug
 
-In order to fix the bug, you need to modify the `/etc/fstab` file. A sample of the file is shown here :-
+In order to fix the bug, you need to modify the `/etc/fstab` file. A sample of the file before editing is shown here :-
 ![Before](https://github.com/AdityaGarg8/efi-mount-bug-fix/raw/main/Before.png)
+
+Now to solve this problem, we need to prevent Linux to scan the line instructing it to mount the WIndows EFI partition. In the above figure, the file shows two EFI partitions, one being `/dev/nvme0n1p1` and other being `/dev/sda2`. The `/dev/nvme0n1p1` partition is the Windows EFI Partition. In most of the cases, this partition is used for Windows. The `/dev/sda2` partition is the partition I had assigned the Linux installer to use as the seperate EFI partition for Linux thus the path of seperate EFI partition may vary from user to user.
+
+So, to prevent Linux to scan the line instructing it to mount the WIndows EFI partition, we need to comment that line (put a `#` in front of the line). After commenting, it looks something like this :-
